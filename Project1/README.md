@@ -21,6 +21,27 @@ pip install -r requirements.txt
 ```
 cd Project1
 python main.py \
-    --image_dir=[Image directory]
+    --image_dir=[Image directory] \
     --save_dir=[Save directory]
 ```
+
+### 3. Processing procedure
+
+![Process image](./save/results/img4.jpg/process.jpg)
+
+Processing steps:
+
+    1. Convert image to gray image
+    2. Convert gray image to binary image
+    3. Do opening to remove noise
+    4. Do closing to connect components
+    5. Label and count all connected components
+    6. Filter top 3 biggest components
+    7. Find largest edge for each side components
+    8. Do opening one more time to smooth main component edge
+    9. Detect main component direction
+    10. Calculate all necessary angles
+
+### 4. Final result
+
+![Final result](./save/results/img4.jpg/result.jpg)
